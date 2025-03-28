@@ -6,6 +6,8 @@ use App\Repository\ArtisteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ArtisteRepository::class)]
 class Artiste
@@ -13,15 +15,19 @@ class Artiste
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['event:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['event:read'])]
     private ?string $Name = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['event:read'])]
     private ?string $Description = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['event:read'])]
     private ?string $Image = null;
 
     /**

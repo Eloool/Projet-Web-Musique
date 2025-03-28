@@ -8,9 +8,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AcceuilController extends AbstractController
 {
-    #[Route('/accueil', name: 'accueil')]
+    #[Route('/', name: 'accueil')]
     public function acceuil(): Response
     {
-        return $this->render('Accueil/accueil.html.twig', [ ]);
+        return $this->render('security/login.html.twig', [ ]);
     }
 }

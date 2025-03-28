@@ -1,1 +1,38 @@
-<h1>OUI</h1>
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <form action="{{ path('add_artist') }}" method="post" enctype="multipart/form-data">
+    <label for="artiste_Name">Nom de l'artiste :</label>
+    <input type="text" id="artiste_Name" name="artiste[Name]" required>
+
+    <label for="artiste_Description">Description :</label>
+    <input type="text" id="artiste_Description" name="artiste[Description]" required>
+
+    <label for="artiste_Image">Image :</label>
+    <input type="file" id="artiste_Image" name="artiste[Image]" accept="image/png, image/gif, image/jpeg" required>
+
+    <button type="submit">Ajouter l'artiste</button>
+</form>
+
+
+
+
+
+{% for artist in artists %}
+
+    <a href="{{ path('artist', {'id': artist.id}) }}">{{ artist.name }}</a>
+
+    <img src="{{ asset('uploads/artists/' ~ artist.image) }}" alt="image de l'artiste" width="100" height="100">
+    
+    
+        
+    {% if is_granted('ROLE_ADMIN') %}
+    <form action="{{ path('delete_artist', {'id': artist.id}) }}" method="post" onsubmit="return confirm('Voulez-vous vraiment supprimer cet artiste ?');">
+    <button type="submit">Supprimer</button>
+</form>
+    {% endif %}
+{% endfor %}
+
+<a href="{{ path('events') }}">Liste Events</a>
+    
+{% endblock %}

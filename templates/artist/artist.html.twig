@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}    
+    <p>{{ artist.name }}</p>
+
+    <p>{{ artist.description }}</p>
+    <img src="{{ asset('uploads/artists/' ~ artist.image) }}" alt="image de l'artiste" width="100" height="100">
+
+
+    {% for event in events %}
+    <p>event.name</p>
+    {% endfor %}
+
+    <form action="{{ path('edit_artist', {'id': artist.id}) }}" method="post">
+
+
+        <label for="artiste_Name">Nom de l'artiste :</label>
+        <input type="text" id="artiste_Name" name="artiste[Name]" value="{{ artist.name }}" required>
+
+        <label for="artiste_Description">Description :</label>
+        <input type="text" id="artiste_Description" name="artiste[Description]" value="{{ artist.description }}" required>
+
+        <label for="artiste_Image">Image :</label>
+        <input type="file" id="artiste_Image" name="artiste[Image]" accept="image/png, image/gif, image/jpeg" required>
+
+        <button type="submit">Edit</button>
+    </form>
+<a href="{{ path('artists') }}">Liste Artistes</a>
+    {% endblock %}

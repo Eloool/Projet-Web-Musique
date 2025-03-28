@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a4f6b83a4641cbe2765b2055c255194",
+    "content-hash": "4599913fd9662acabf7dbc9619ed3b82",
     "packages": [
         {
             "name": "api-platform/doctrine-common",
@@ -2670,16 +2670,16 @@
         },
         {
             "name": "nelmio/api-doc-bundle",
-            "version": "v5.0.0",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nelmio/NelmioApiDocBundle.git",
-                "reference": "44a40c31fd568cf5c6c7294a122166d613a5fd9c"
+                "reference": "ede5e66c0016135ca580c94b3cc832310d77cd53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/NelmioApiDocBundle/zipball/44a40c31fd568cf5c6c7294a122166d613a5fd9c",
-                "reference": "44a40c31fd568cf5c6c7294a122166d613a5fd9c",
+                "url": "https://api.github.com/repos/nelmio/NelmioApiDocBundle/zipball/ede5e66c0016135ca580c94b3cc832310d77cd53",
+                "reference": "ede5e66c0016135ca580c94b3cc832310d77cd53",
                 "shasum": ""
             },
             "require": {
@@ -2722,7 +2722,7 @@
                 "symfony/dom-crawler": "^6.4 || ^7.1",
                 "symfony/expression-language": "^6.4 || ^7.1",
                 "symfony/form": "^6.4 || ^7.1",
-                "symfony/phpunit-bridge": "^6.4",
+                "symfony/phpunit-bridge": "^6.4 || ^7.1",
                 "symfony/property-access": "^6.4 || ^7.1",
                 "symfony/security-csrf": "^6.4 || ^7.1",
                 "symfony/serializer": "^6.4 || ^7.1",
@@ -2779,7 +2779,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nelmio/NelmioApiDocBundle/issues",
-                "source": "https://github.com/nelmio/NelmioApiDocBundle/tree/v5.0.0"
+                "source": "https://github.com/nelmio/NelmioApiDocBundle/tree/v5.0.1"
             },
             "funding": [
                 {
@@ -2787,7 +2787,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-07T19:00:20+00:00"
+            "time": "2025-03-24T15:14:41+00:00"
         },
         {
             "name": "nelmio/cors-bundle",

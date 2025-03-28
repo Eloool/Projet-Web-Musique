@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>{{ event.name }}</h1>
+<p>{{ event.date|date('d/m/Y H:i') }}</p>
+<p>{{ event.artist.name }}</p>
+
+<h1>Modifier l'événement : {{ event.name }}</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('events') }}">Retour à la liste</a>
+{% endblock %}

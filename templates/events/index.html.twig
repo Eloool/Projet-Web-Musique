@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Liste des événements</h1>
+
+    {% for event in events %}
+        <a href="{{ path('event', {'id': event.id}) }}">{{ event.name }}- {{ event.date|date('d/m/Y H:i') }}</a>
+        <form action="{{ path('delete_event', {'id': event.id}) }}" method="post" onsubmit="return confirm('Voulez-vous vraiment supprimer cet event ?');">
+        <button type="submit">Supprimer</button>
+</form>
+    {% endfor %}
+
+    <h2>Ajouter un événement</h2>
+    {{ form_start(form) }}
+        {{ form_row(form.Name) }}
+        {{ form_row(form.Date) }}
+        {{ form_row(form.Artist) }}
+        <button type="submit">Ajouter</button>
+    {{ form_end(form) }}
+
+<a href="{{ path('artists') }}">Liste Artistes</a>
+{% endblock %}
